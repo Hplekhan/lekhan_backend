@@ -110,7 +110,7 @@ public class StringOperations {
         int count =0;
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (ch == 'a' && ch == 'e' && ch == 'i' && ch == 'o' && ch == 'u') {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
                count++;
             }
         }
@@ -157,7 +157,8 @@ public class StringOperations {
 		
 		/* reverseWord(str2); */
 		
-		/* if(isAllVowels(str2))
+		 /*
+		 if(isAllVowels(str2))
 		{
 			System.out.println("yes it is");
 		}
