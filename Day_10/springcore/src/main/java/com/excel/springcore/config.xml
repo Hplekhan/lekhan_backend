@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="https://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ https://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <bean id="student" class="com.excel.springcore.Student">
+			<property name="id" value="18"></property>	
+			<property name="name" value="Virat"></property>
+			<property name="address" value="Delhi"></property>
+			
+		</bean>
+		
+		<!-- THIS IS NORMAL METHOD USING BEAN
+		 <bean name="student1" class="com.excel.springcore.Student">
+			<property name="id" value="07"></property>	
+			<property name="name" value="Dhoni"></property>
+			<property name="address" value="Ranchi"></property>
+			
+		</bean>-->
+		
+		<!-- other method we can write this using p schema-->
+		<bean id="student1" class="com.excel.springcore.Student" p:id="07" p:name="Dhoni" p:address ="Ranchi"></bean>
+        
+</beans>

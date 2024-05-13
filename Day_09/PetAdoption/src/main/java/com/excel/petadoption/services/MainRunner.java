@@ -5,12 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.excel.petadoption.entity.EventAttendence;
-import com.excel.petadoption.entity.EventTable;
-import com.excel.petadoption.entity.MessageTable;
+import com.excel.petadoption.entity.Organization;
 import com.excel.petadoption.entity.Pets;
-
-import antlr.debug.Event;
+import com.excel.petadoption.entity.Users;
 
 public class MainRunner {
 
@@ -20,27 +17,27 @@ public class MainRunner {
 
 	public static void main(String[] args) {
 
-		factory = Persistence.createEntityManagerFactory("message_table");
+		factory = Persistence.createEntityManagerFactory("adoption_application");
 		manager = factory.createEntityManager();
 		transaction = manager.getTransaction();
 		
 		
-		/* Organization org = new Organization();*/
+		Organization org = new Organization();
 		
-		/*Users us = new Users();*/
+		Users us = new Users();
 		
 		/*AdoptionApplication adoptApp = new AdoptionApplication();*/
 
 		/*EventTable event = new EventTable();*/
 		
-		/*Pets pets = new Pets();*/
+		Pets pets = new Pets();
 		
 		/*EventAttendence attendence = new EventAttendence();*/
 		
-		MessageTable msgTable = new MessageTable();
+		/*MessageTable msgTable = new MessageTable();*/
 		
 		transaction.begin();
-		manager.persist(msgTable);
+		manager.persist(pets);
 		transaction.commit();
 
 		manager.close();

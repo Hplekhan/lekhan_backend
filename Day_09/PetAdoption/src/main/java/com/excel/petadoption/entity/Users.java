@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -42,8 +44,11 @@ public class Users {
 	@Column(name ="created_at")
 	private Date date;
 	
-	/* @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
-	private Organization organization; */
+	 @ManyToOne(cascade = CascadeType.ALL)
+	private Organization organization; 
+	 
+	 @ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
+	 private AdoptionApplication adoptionApplication;
 
 	public int getId() {
 		return id;

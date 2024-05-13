@@ -1,6 +1,8 @@
 package com.excel.petadoption.entity;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -43,6 +45,12 @@ public class Organization {
 	
 	private String website;
 	
-	/*@ManyToOne(cascade = CascadeType.ALL)
-	private Users users;*/
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
+	List<Users> users = new ArrayList<Users>();
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "organization")
+	List<Pets> pets = new ArrayList<Pets>();
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
+	List<EventTable> event =  new ArrayList<EventTable>();
 }

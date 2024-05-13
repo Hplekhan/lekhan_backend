@@ -2,11 +2,14 @@ package com.excel.petadoption.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -31,8 +34,8 @@ public class AdoptionApplication {
 	@Column(name ="pet_id")
 	private int pet_id;
 	
-	
-	private int user_id;
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Users users;
 	
 	@Column(name ="application_date")
 	private Date date;
