@@ -1,15 +1,15 @@
 package com.excel.lms.entity;
 
-import com.excel.lms.enums.AddressType;
+import java.time.Year;
+
+import com.excel.lms.enums.EducationType;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,34 +19,29 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Builder
-@Table(name = "employee_address_info")
-public class AddressDetails {
+@Table(name ="employee_educational_info")
+public class EducationalDetails {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int address_id;
+	private int  education_id;
 	
 	@Enumerated(EnumType.STRING)
-	private AddressType addressType;
+	private EducationType educationType;
 	
-	private String doorNo;
+	private double percentage;
 	
-	private String street;
-	
-	private String locality;
-	
-	private String city;
+	private String instituteName;
 	
 	private String state;
 	
-	private String pinCode;
+	private String universityName;
 	
-	private String landMark;
+	private String specialization;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	private EmployeePrimaryInfo employeePrimaryInfo;
-
+	private double yearOfPassing;
 }
