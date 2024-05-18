@@ -62,22 +62,25 @@ public class EmployeePrimaryInfo {
 	@Enumerated(EnumType.STRING)
 	private EmployeeStatus employeeStatus;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "employeePrimaryInfo")
 	private EmployeeSecondaryInfo employeeSecondaryInfo;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
-	private List<ContactInfo> contacts = new ArrayList<ContactInfo>();
+	private List<ContactInfo> contacts ;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
-	private List<AddressDetails> addressDetails = new ArrayList<AddressDetails>();
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
+	private List<AddressDetails> addressDetails ;
+	
+	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
+	private BankDetails bankDetails;
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "listOfSkills")
+	private List<TechnicalSkills> skills ;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employeePrimaryInfo")
-	private List<BankDetails> bankDetails = new ArrayList<BankDetails>();
+	private List<Experience> experienceDetails;
 	
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "listOfSkills")
-	private List<TechnicalSkills> skills = new ArrayList<TechnicalSkills>();
-	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employeePrimaryInfo")
-	private List<Experience> experienceDetails = new ArrayList<Experience>();
+	@OneToMany(fetch =  FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
+	private List<EducationalDetails> educationDetails;
 
 }
