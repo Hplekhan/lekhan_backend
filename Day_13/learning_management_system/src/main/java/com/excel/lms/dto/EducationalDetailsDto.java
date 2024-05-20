@@ -16,6 +16,8 @@ import lombok.Setter;
 public class EducationalDetailsDto {
 
 	private int  education_id;
+	
+	private String employeeId;
 
 	private EducationType educationType;
 

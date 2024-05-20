@@ -15,6 +15,8 @@ import lombok.Setter;
 public class AddressInfoDto {
 	private int address_id;
 	
+	private String employeeId;
+	
 	private AddressType addressType;
 	
 	private String doorNo;

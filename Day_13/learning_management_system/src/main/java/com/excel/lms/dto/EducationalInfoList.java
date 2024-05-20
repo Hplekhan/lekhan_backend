@@ -1,27 +1,24 @@
 package com.excel.lms.dto;
 
-import com.excel.lms.enums.ContactType;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ContactInfoDto {
+
+public class EducationalInfoList {
 	
-	private int conatct_id;
-	
-	private String employeeId;
-	
-	private ContactType contactType;
-	
-	private String contactNumber;
+		private String employeeId;
+		
+		private List<EducationalDetailsDto> educations;
 
 }

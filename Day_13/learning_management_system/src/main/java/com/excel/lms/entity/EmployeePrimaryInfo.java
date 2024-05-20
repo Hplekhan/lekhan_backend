@@ -25,6 +25,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -77,7 +78,7 @@ public class EmployeePrimaryInfo {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "listOfSkills")
 	private List<TechnicalSkills> skills ;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employeePrimaryInfo")
+	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")
 	private List<Experience> experienceDetails;
 	
 	@OneToMany(fetch =  FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "employeePrimaryInfo")

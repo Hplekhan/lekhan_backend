@@ -1,6 +1,5 @@
 package com.excel.lms.dto;
 
-import com.excel.lms.enums.ContactType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,5 +21,7 @@ private int technical_id;
 	private double skillRating;
 	
 	private double yearOfExperience;
+	
+	
 
 }

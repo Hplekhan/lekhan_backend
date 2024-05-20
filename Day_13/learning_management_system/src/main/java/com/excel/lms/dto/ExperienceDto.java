@@ -13,10 +13,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class ExperienceDto {
 	private int experience_id;
+	
+	private String employeeId;
 	
 	private String companyName;
 	
@@ -24,7 +27,7 @@ public class ExperienceDto {
 	
 	private LocalDate dateOfReliving;
 	
-	private double yearOfExperience;
+	private Double yearOfExperience;
 	
 	private Designation designation;
 	

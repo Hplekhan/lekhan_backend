@@ -1,7 +1,5 @@
 package com.excel.lms.entity;
 
-import java.time.Year;
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -38,5 +36,5 @@ public class TechnicalSkills {
 	private double yearOfExperience;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<EmployeePrimaryInfo> listOfSkills = new ArrayList<EmployeePrimaryInfo>();
+	private List<EmployeePrimaryInfo> listOfSkills;
 }
